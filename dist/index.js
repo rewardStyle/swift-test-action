@@ -32105,9 +32105,14 @@ async function run() {
       console.log(`Project selected: ${xcodeproj}`);
       projectParameter = "-project " + `"${xcodeproj}" `;
     } else if (fs.existsSync("Package.swift")) {
-      console.log(`Package.swift selected`);
-      await swiftPackageRun(platform, extraParameters);
-      return;
+      let scheme = core.getInput("scheme");
+      console.log(`scheme: ${scheme}`);
+      if (!scheme) {
+        console.log(`Package.swift selected`);
+        await swiftPackageRun(platform, extraParameters);
+        return;
+      }
+      projectParameter = "";
     } else {
       core.setFailed(
         "Unable to find workspace, project or Swift package file. Please set with workspace or xcodeproj"

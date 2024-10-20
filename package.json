@@ -1,6 +1,5 @@
 {
   "name": "swift-test-action",
-  "version": "1.0.0",
   "description": "Automatically instrumenta Swift or Objective-C test for Datadog CI Visibility",
   "main": "index.js",
   "scripts": {
@@ -11,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DataDog/swift-test-action.git"
+    "url": "git+https://github.com/rewardStyle/swift-test-action.git"
   },
   "keywords": [
     "actions",
